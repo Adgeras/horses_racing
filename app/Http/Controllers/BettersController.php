@@ -15,9 +15,9 @@ class BettersController extends Controller
     public function index(Request $request)
     {
         if (isset($request->horse_id) && $request->horse_id !== 0)
-            $betters = \App\Betters::where('horse_id', $request->horse_id)->orderBy('name')->get();
+            $betters = \App\Betters::where('horse_id', $request->horse_id)->orderBy('bet', 'desc')->get();
         else
-            $betters = \App\Betters::orderBy('name')->get();
+            $betters = \App\Betters::orderBy('bet', 'desc')->get();
         $horses = \App\Horses::orderBy('name')->get();
         return view('betters.index', ['betters' => $betters, 'horses' => $horses]);
     }
