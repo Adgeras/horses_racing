@@ -1,7 +1,10 @@
 @extends('layouts.app')
 @section('content')
-<div class="card">
-    <div class="card-header">Info apie arklį už kurį statoma</div>
+<div class="card container" style="width: 60%">
+    <img class="card-img-bottom" src="{{url('/img/horse.jpg')}}" alt="Card image cap">
+    <div class="card-header">
+        <h3 class="text-center">Info apie arklį už kurį statoma:</h3>
+    </div>
     <div class="card-body">
         <h5>Arklys: {{ $horse->name }}</h5>
         <h5>Dalyvauta varžybų: {{ $horse->runs }}</h5>

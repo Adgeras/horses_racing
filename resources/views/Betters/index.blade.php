@@ -20,19 +20,19 @@
     @endif
     <table class="table">
         <tr>
-            <th>Vardas</th>
-            <th>Pavardė</th>
-            <th>Statoma sum Eur</th>
-            <th>Stato už arklį</th>
-            <th>Veikmai</th>
+            <th class="text-center">Vardas</th>
+            <th class="text-center">Pavardė</th>
+            <th class="text-center">Statoma sum, Eur</th>
+            <th class="text-center">Stato už arklį</th>
+            <th class="text-center">Veiksmai</th>
         </tr>
         @foreach ($betters as $better)
-        <tr>
-            <td>{{ $better->name }}</td>
-            <td>{{ $better->surname }}</td>
-            <td>{{ $better->bet }}</td>
-            <td>{{ $better->horse['name'] }}</td>
-            <td>
+        <tr >
+            <td class="text-center">{{ $better->name }}</td>
+            <td class="text-center">{{ $better->surname }}</td>
+            <td class="text-center">{{ $better->bet }}</td>
+            <td class="text-center">{{ $better->horse['name'] }}</td>
+            <td class="text-center">
                 <form action={{ route('betters.destroy', $better->id) }} method="POST">
                     <a class="btn btn-success" href={{ route('betters.edit', $better->id) }}>Redaguoti</a>
                     <a class="btn btn-primary" href={{ route('horses.travel', $horse->id) }}>Info apie arklį</a>

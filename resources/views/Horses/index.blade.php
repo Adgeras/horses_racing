@@ -6,19 +6,19 @@
     @endif
     <table class="table">
         <tr>
-            <th>Vardas</th>
-            <th>Dalyvauta rungtynių skaičius</th>
-            <th>Laimėtų rungtynių skaičius</th>
-            <th>Aprašymas</th>
-            <th>Veiksmai</th>
+            <th class="text-center">Vardas</th>
+            <th class="text-center">Dalyvauta rungtynių skaičius</th>
+            <th class="text-center">Laimėtų rungtynių skaičius</th>
+            <th class="text-center">Aprašymas</th>
+            <th class="text-center">Veiksmai</th>
         </tr>
         @foreach ($horses as $horse)
         <tr>
-            <td>{{ $horse->name }}</td>
-            <td>{{ $horse->runs }}</td>
-            <td>{{ $horse->wins }}</td>
-            <td>{!! $horse->about !!}</td>
-            <td>
+            <td class="text-center">{{ $horse->name }}</td>
+            <td class="text-center">{{ $horse->runs }}</td>
+            <td class="text-center">{{ $horse->wins }}</td>
+            <td class="text-center">{!! $horse->about !!}</td>
+            <td class="text-center">
                 <form action={{ route('horses.destroy', $horse->id) }} method="POST">
                     <a class="btn btn-success" href={{ route('horses.edit', $horse->id) }}>Redaguoti</a>
                     @csrf @method('delete')
