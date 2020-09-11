@@ -31,5 +31,11 @@
     <div>
         <a href="{{ route('horses.create') }}" class="btn btn-success">Pridėti</a>
     </div>
+    <!-- ******************** RUNNING NUMBERS **** -->
+    <div class="container bckg-main-color">
+    <div id="runnNumbPlace" class="row">
+        <!-- **** Rendered running numbers content *** -->
+    </div>
+</div>
 </div>
 @endsection
